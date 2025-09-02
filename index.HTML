@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMBM Coffee House</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background-color: #f8f5f0; color: #333; }
+    nav {
+      position: fixed; top: 0; width: 100%; background: #3e2723;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 50px; z-index: 1000;
+    }
+    nav h1 { color: #fff; font-size: 1.8rem; letter-spacing: 3px; }
+    nav ul { list-style: none; display: flex; gap: 25px; }
+    nav ul li a { color: #fff; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    nav ul li a:hover { color: #ffcc80; }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0') no-repeat center center/cover;
+      height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; color: white; padding: 0 20px;
+    }
+    header h2 { font-size: 4rem; text-shadow: 0px 4px 12px rgba(0,0,0,0.7); }
+    header p { font-size: 1.2rem; margin: 20px 0; }
+    .btn {
+      background: #ff9800; color: white; padding: 12px 25px;
+      border-radius: 8px; font-size: 1rem; text-decoration: none; transition: 0.3s;
+    }
+    .btn:hover { background: #e65100; }
+
+    .menu, .about, .contact, .booking, .order { padding: 80px 20px; text-align: center; }
+    .menu h2, .about h2, .contact h2, .booking h2, .order h2 { font-size: 2.5rem; margin-bottom: 30px; color: #4e342e; }
+    .menu-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1100px; margin: auto; }
+    .item { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0px 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+    .item:hover { transform: translateY(-10px); box-shadow: 0px 8px 20px rgba(0,0,0,0.2); }
+    .item img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; }
+    .item h3 { color: #6b4226; margin-bottom: 10px; }
+    .item p { font-size: 0.95rem; }
+
+    form { max-width: 500px; margin: auto; text-align: left; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0px 5px 15px rgba(0,0,0,0.1); }
+    form label { display: block; margin: 10px 0 5px; font-weight: bold; }
+    form input, form select, form textarea {
+      width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;
+      border-radius: 6px; font-size: 1rem;
+    }
+    form button {
+      background: #ff9800; color: white; padding: 12px; border: none;
+      width: 100%; font-size: 1rem; border-radius: 8px; cursor: pointer;
+    }
+    form button:hover { background: #e65100; }
+
+    footer { background: #3e2723; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <h1>SMBM</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#booking">Booking</a></li>
+      <li><a href="#order">Order</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home">
+    <h2>Welcome to SMBM Coffee House</h2>
+    <p>Your Daily Dose of Happiness ☕</p>
+    <a href="#menu" class="btn">Explore Menu</a>
+  </header>
+
+  <!-- Menu -->
+  <section class="menu" id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+      <div class="item">
+        <img src="/image copy 3.png" alt="Espresso">
+        <h3>Espresso</h3>
+        <p>গাঢ় ও ঝাঁঝালো খাঁটি কফি।</p>
+        <p><b>₹ 120</b></p>
+      </div>
+      <div class="item">
+        <img src="/image copy 4.png" alt="Cappuccino">
+        <h3>Cappuccino</h3>
+        <p>ফেনাযুক্ত দুধ ও কফির নিখুঁত মিশ্রণ।</p>
+        <p><b>₹ 150</b></p>
+      </div>
+      <div class="item">
+        <img src="/image copy 2.png" alt="Latte">
+        <h3>Latte</h3>
+        <p>নরম দুধের সাথে কফির সুস্বাদু মিশ্রণ।</p>
+        <p><b>₹ 180</b></p>
+      </div>
+      <div class="item">
+        <img src="/image copy.png" alt="Mocha">
+        <h3>Mocha</h3>
+        <p>চকলেট স্বাদের কফি ডিলাইট।</p>
+        <p><b>₹ 200</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section class="booking" id="booking">
+    <h2>সিট বুকিং করুন</h2>
+    <form id="bookingForm">
+      <label>Name:</label>
+      <input type="text" name="name" required>
+      <label>Phone:</label>
+      <input type="tel" name="phone" required>
+      <label>Date:</label>
+      <input type="date" name="date" required>
+      <label>Time:</label>
+      <input type="time" name="time" required>
+      <label>Number of Guests:</label>
+      <select name="guests" required>
+        <option value="1">1 জন</option>
+        <option value="2">2 জন</option>
+        <option value="4">4 জন</option>
+        <option value="6">6 জন</option>
+        <option value="10">10+ জন</option>
+      </select>
+      <button type="submit">সিট বুক করুন</button>
+    </form>
+  </section>
+
+
+
+  <!-- About -->
+  <section class="about" id="about">
+    <h2>আমাদের সম্পর্কে</h2>
+    <p>
+      SMBM Coffee House-এ আমরা বিশ্বাস করি প্রতিটি কাপ কফির একটা গল্প আছে।  
+      সতেজ ভাজা কফি বিন থেকে শুরু করে নিখুঁতভাবে তৈরি প্রতিটি কাপে  
+      আমরা আপনাকে দিই আনন্দ, উষ্ণতা ও এক সুন্দর মুহূর্তের স্বাদ।  
+      আমাদের কাছে আসুন, আর প্রতিটি চুমুকে খুঁজে পান ভালোবাসা ও সুখের ছোঁয়া। ☕
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>যোগাযোগ করুন</h2>
+    <p>📍 ঠিকানা: মেইন স্ট্রিট, আপনার শহর</p>
+    <p>📞 ফোন: +91 9876543210</p>
+    <p>📧 ইমেইল: smbmcafe@example.com</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 SMBM Coffee House | সর্বস্বত্ব সংরক্ষিত</p>
+  </footer>
+
+  <script>
+    // ফর্ম সাবমিশন হ্যান্ডেল করার জন্য ডেমো alert
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("✅ আপনার সিট বুকিং রিকোয়েস্ট নেওয়া হয়েছে! আমরা খুব শীঘ্রই যোগাযোগ করব।");
+    });
+
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("☕ আপনার অর্ডার কনফার্ম হয়েছে! শীঘ্রই আপনার কাছে পৌঁছে যাবে।");
+    });
+  </script>
+</body>
+</html>
